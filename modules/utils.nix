@@ -8,10 +8,12 @@
     stress # Stress-test
     kate # Text Editor
     usbimager # ISO Imager
+    xclicker # Autoclicker
+    htop # Basic Process Viewer
+    zenith # Process Viewer
 
     # Calculators
     speedcrunch
     libsForQt5.kcalc
-    # Calculators
   ];
 }

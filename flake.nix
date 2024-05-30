@@ -7,6 +7,17 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
+      portable = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+          ./hosts/portable/configuration.nix
+          ./globals.nix
+          ./modules/unigine.nix
+        ];
+      };
+
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
@@ -16,6 +27,7 @@
           ./globals.nix # Default Modules
           ./modules/openrgb.nix # OpenRGB Installation
           ./modules/gaming.nix # Gaming Apps
+          ./modules/unigine.nix # GPU Stress Test
         ];
       };
 
