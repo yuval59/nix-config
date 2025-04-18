@@ -1,10 +1,13 @@
 { pkgs, inputs, ... }:
 
 {
+    environment.systemPackages = with pkgs; [
+        pavucontrol # GUI sound control
+    ];
+
     # rtkit is optional but recommended
     security.rtkit.enable = true;
-    # Enable sound with pipewire.
-    sound.enable = true;
+
     services.pipewire = {
         enable = true;
 

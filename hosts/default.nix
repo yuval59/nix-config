@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 {    
-    system.stateVersion = "unstable"; # NixPkgs Version
+    system.stateVersion = "25.05"; # NixPkgs Version
     nixpkgs.config.allowUnfree = true; # Allow unfree packages
     
     nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enable flakes

@@ -4,9 +4,11 @@
   environment.systemPackages = with pkgs; [
     ffmpeg-full # FFMpeg
     vlc # VLC player
-    obs-studio # OBS
     tvnamer # TV Shows File Renamer
-    plex-media-player # Plex
+    # plex-media-player # Plex
     spotify # Spotify
+
+    obs-studio # OBS
+    linuxKernel.packages.linux_zen.v4l2loopback # OBS Virtual Camera Support
   ];
 }

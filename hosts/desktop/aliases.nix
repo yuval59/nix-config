@@ -13,5 +13,9 @@
     alias rebuild="sudo nixos-rebuild switch --flake /Storage/Nix/#desktop"
     alias r="rebuild"
     alias ro="rebuild"
+
+    alias cs="code /Storage/CS2\ Config"
+
+    alias hypr="code ~/.config/hypr"
   '';
 }

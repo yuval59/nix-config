@@ -13,7 +13,7 @@
       ./aliases.nix # Include custom aliases
     ];
 
-  networking.hostName = "Yuvals_PC"; # Define your hostname.
+  networking.hostName = "Home_NAS"; # Define your hostname.
 
   # Mount Storage Partition
   fileSystems."/Storage" = { 

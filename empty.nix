@@ -2,6 +2,6 @@
 
 {
     environment.systemPackages = with pkgs; [
-        gimp # GIMP
-    ]
+        # This is a template for new modules
+    ];
 }
