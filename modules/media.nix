@@ -5,10 +5,10 @@
     ffmpeg-full # FFMpeg
     vlc # VLC player
     tvnamer # TV Shows File Renamer
-    # plex-media-player # Plex
+    (callPackage ./plex/package.nix {}) # Plex
     spotify # Spotify
 
     obs-studio # OBS
-    linuxKernel.packages.linux_zen.v4l2loopback # OBS Virtual Camera Support
+    linuxPackages.v4l2loopback # OBS Virtual Camera Support
   ];
 }

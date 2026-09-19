@@ -1,11 +1,14 @@
 { pkgs, modulesPath, lib, ... }: {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-    ./hosts/portable/configuration.nix
-    ./globals.nix
-    ./modules/bluetooth.nix
-    ./modules/nvidia/proprietary.nix
+    ./hosts/portable/configuration.nix # Host configuration
+    ./globals.nix # All the defaults
+    ./modules/bluetooth.nix # Bluetooth support just in case
+    ./modules/nvidia/proprietary.nix # Nvidia proprietary drivers
+    ./modules/gaming.nix # GAMING babyyy
   ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # use the latest Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;

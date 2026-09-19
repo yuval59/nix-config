@@ -6,7 +6,10 @@
     steam # Steam
     prismlauncher # Prism Minecraft Launcher
     lutris # OSS General Launcher
-    gpu-screen-recorder # Screen recorder
+    # r2modman # Mod Manager for many games
+    ckan # Mod manager for KSP specifically
+
+    scanmem # Scanning memory for running apps
   ];
 
   programs.steam = {

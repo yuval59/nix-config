@@ -6,6 +6,16 @@
     
     nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enable flakes
 
+    # Automatic garbage collection
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 30d";
+    };
+
+    # Automatically delete old boot entries
+    boot.loader.systemd-boot.configurationLimit = 10;
+
     # Bootloader.
     boot.loader = {
         systemd-boot.enable = true;
@@ -18,7 +28,12 @@
     users.users.yuval = {
         isNormalUser = true;
         description = "Yuval Maron";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [
+            "networkmanager" 
+            "wheel" 
+            "libvirtd"
+            "kvm"
+        ];
     };
 
     time.timeZone = "Asia/Jerusalem"; # Set your time zone.

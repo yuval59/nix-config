@@ -4,12 +4,14 @@
   # Custom aliases
   environment.interactiveShellInit = ''
     alias edit-nix="code ~/Nix"
-    alias update-flake="sudo nix flake update --flake /Storage/Nix"
-    alias rebuild-laptop="sudo nixos-rebuild switch --flake /Storage/Nix/#laptop"
-
     alias e="edit-nix"
-    alias uf="update-flake"
-    alias r="rebuild-laptop"
-    alias rr="update-flake & rebuild-laptop"
+
+    alias rr="sudo nixos-rebuild switch --recreate-lock-file --flake /Storage/Nix/#laptop"
+    alias rebuild-update="rr"
+    alias ru="rr"
+
+    alias r="sudo nixos-rebuild switch --flake /Storage/Nix/#laptop"
+    alias rebuild="r"
+    alias ro="r"
   '';
 }

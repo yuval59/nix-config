@@ -2,7 +2,7 @@
 
 {
     services = {
-        # xserver.enable = true;
+        xserver.enable = true;
 
         desktopManager.plasma6.enable = true;
 
@@ -25,7 +25,7 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # Tell Firefox to not use Wayland
-    environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
+    # environment.sessionVariables.MOZ_ENABLE_WAYLAND = "0";
     # Currently, Firefox/Wayland have a combined sort of weird bug causing frequent crashing.
     # This makes Firefox run through XWayland instead.
 }
